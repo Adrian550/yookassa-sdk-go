@@ -14,4 +14,6 @@ type Item struct {
 	VatCode string `json:"vat_code"`
 
 	PaymentSubject string `json:"payment_subject,omitempty"`
+
+	PaymentMode string `json:"payment_mode,omitempty"`
 }
