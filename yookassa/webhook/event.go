@@ -3,6 +3,7 @@ package yoowebhook
 import (
 	yoopayment "github.com/Adrian550/yookassa-sdk-go/yookassa/payment"
 	yoopayout "github.com/Adrian550/yookassa-sdk-go/yookassa/payout"
+	yoorefund "github.com/Adrian550/yookassa-sdk-go/yookassa/refund"
 )
 
 type WebhookType string
@@ -22,7 +23,7 @@ const (
 	EventPayoutCanceled           WebhookEventType = "payout.canceled"
 )
 
-type WebhookEvent[T yoopayment.Payment | yoopayout.Payout] struct {
+type WebhookEvent[T yoopayment.Payment | yoopayout.Payout | yoorefund.Refund] struct {
 	Type   WebhookType      `json:"type"`
 	Event  WebhookEventType `json:"event"`
 	Object T                `json:"object"`
